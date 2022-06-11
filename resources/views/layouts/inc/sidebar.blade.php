@@ -15,10 +15,17 @@
             <p>Dashboard</p>
           </a>
         </li>
+        
         <li class="nav-item ">
           <a class="nav-link" href="{{ route('category') }}">
             <i class="material-icons">person</i>
             <p>Categories</p>
+          </a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="{{ route('add-category') }}">
+            <i class="material-icons">person</i>
+            <p>Add Category</p>
           </a>
         </li>
         <li class="nav-item ">
