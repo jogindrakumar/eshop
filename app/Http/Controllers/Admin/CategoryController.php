@@ -39,4 +39,8 @@ class CategoryController extends Controller
         $category->save();
         return redirect('/dashboard')->with('status','category Added Successfully');
     }
+    public function edit($id){
+        $categories = Category::find($id);
+        return view('admin.category.edit',compact('categories'));
+    }
 }
