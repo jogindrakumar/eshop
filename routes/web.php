@@ -31,6 +31,9 @@ Route::middleware(['auth','isAdmin'])->group(function(){
 
 //    Route::get('/dashboard','Admin\FrontendController@index');
    
-Route::get('/categories',[CategoryController::class,'index']);
+Route::get('/categories',[CategoryController::class,'index'])->name('category');
 //    Route::get('categories','Admin\CategoryController@index');
+
+Route::get('/add-category',[CategoryController::class,'add'])->name('add-category');
+Route::post('/store',[CategoryController::class,'store'])->name('store.category');
 });
