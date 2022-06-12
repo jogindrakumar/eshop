@@ -31,12 +31,13 @@ Route::middleware(['auth','isAdmin'])->group(function(){
 
 //    Route::get('/dashboard','Admin\FrontendController@index');
    
-Route::get('/categories',[CategoryController::class,'index'])->name('category');
+
 //    Route::get('categories','Admin\CategoryController@index');
 
 // Category ---------- Category ----------------
+Route::get('/categories',[CategoryController::class,'index'])->name('category');
 Route::get('/add-category',[CategoryController::class,'add'])->name('add-category');
-Route::post('/store',[CategoryController::class,'store'])->name('store.category');
+Route::post('/category/store',[CategoryController::class,'store'])->name('category.store');
 Route::get('/category/edit/{id}',[CategoryController::class,'edit'])->name('category.edit');
 Route::put('/category/update/{id}',[CategoryController::class,'update'])->name('update.category');
 Route::get('/category/delete/{id}',[CategoryController::class,'delete'])->name('category.delete');
