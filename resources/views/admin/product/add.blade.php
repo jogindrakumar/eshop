@@ -14,10 +14,17 @@
                 <label for="">Name</label>
                 <input type="text" class="form-control" name="name">
             </div>
-            <div class="col-md-6">
-                <label for="">Slug</label>
-                <input type="text" class="form-control" name="slug">
-            </div>
+            
+                <select class="form-select" name="cat_id" aria-label="Default select example">
+
+            <option selected >Select Category</option>
+            @foreach ($category as $category)
+                <option value="{{$category->id}}">{{$category->name}}</option>
+            @endforeach
+            
+ 
+</select>
+           
             <div class="col-md-12">
                 <label for="">Description</label>
                 <textarea name="description"  rows="3" class="form-control"></textarea>
