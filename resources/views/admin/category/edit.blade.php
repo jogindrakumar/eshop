@@ -9,7 +9,9 @@
     </div>
     <div class="card-body">
         <form action="{{ route('update.category',$categories->id) }}" method="POST" enctype="multipart/form-data">
+            
             @csrf
+            @method('PUT')
             <div class="col-md-6">
                 <label for="">Name</label>
                 <input type="text" class="form-control" value="{{ $categories->name }}" name="name">
@@ -20,7 +22,7 @@
             </div>
             <div class="col-md-12">
                 <label for="">Description</label>
-                <textarea name="description"  rows="3" value="{{ $categories->description }}" class="form-control"></textarea>
+                <textarea name="description"  rows="3"  class="form-control">{{ $categories->description }}</textarea>
             </div>
             <div class="col-md-6">
                 <label for="">Status</label>
@@ -44,9 +46,12 @@
                 <textarea name="meta_descrip" class="form-control" rows="3" value="">{{ $categories->meta_descrip }}</textarea>
              
             </div>
+            @if ($categories->image)
+                <img src="{{ asset('assets/upload/category/'.$categories->image) }}" alt="" style="height: 100px; width:100px;">
+            @endif
             <div class="col-md-6">
                 <label for="">Image</label>
-                <input type="file" class="form-control" name="image" value="{{ $categories->image }}">
+                <input type="file" class="form-control" name="image" value="">
             </div>
             <div class="col-md-12">
                 <button type="submit" class="btn btn-primary">Submit</button>
