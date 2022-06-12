@@ -45,5 +45,6 @@ Route::get('/category/delete/{id}',[CategoryController::class,'delete'])->name('
 
 Route::get('/product',[ProductController::class,'index'])->name('product');
 Route::get('/product-add',[ProductController::class,'add'])->name('product-add');
+Route::post('/store',[ProductController::class,'store'])->name('product.store');
 
 });
