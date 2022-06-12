@@ -9,23 +9,36 @@
       </a></div>
     <div class="sidebar-wrapper">
       <ul class="nav">
-        <li class="nav-item active  ">
-          <a class="nav-link" href="./dashboard.html">
+        <li class="nav-item {{ Request::is('dashboard') ? 'active': '' }} ">
+          <a class="nav-link" href="{{ route('dashboard') }}">
             <i class="material-icons">dashboard</i>
             <p>Dashboard</p>
           </a>
         </li>
         
-        <li class="nav-item ">
+        <li class="nav-item {{ Request::is('categories') ? 'active': '' }}">
           <a class="nav-link" href="{{ route('category') }}">
-            <i class="material-icons">person</i>
+            <i class="fas fa-grip-lines"></i>
             <p>Categories</p>
           </a>
         </li>
-        <li class="nav-item ">
+        <li class="nav-item {{ Request::is('add-category') ? 'active': '' }}">
           <a class="nav-link" href="{{ route('add-category') }}">
-            <i class="material-icons">person</i>
+            <i class="fas fa-plus"></i>
             <p>Add Category</p>
+          </a>
+        </li>
+        <li class="nav-item {{ Request::is('product') ? 'active': '' }}">
+          <a class="nav-link" href="{{ route('product') }}">
+            <i class="fas fa-shopping-basket"></i>
+            <p>Product</p>
+          </a>
+        
+        </li>
+        <li class="nav-item {{ Request::is('product-add') ? 'active': '' }}">
+          <a class="nav-link" href="{{ route('product-add') }}">
+            <i class="fas fa-plus"></i>
+            <p>ADD Product</p>
           </a>
         </li>
         <li class="nav-item ">

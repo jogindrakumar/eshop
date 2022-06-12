@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\FrontendController;
-
+use App\Http\Controllers\Admin\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,16 +27,23 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 Route::middleware(['auth','isAdmin'])->group(function(){
-    Route::get('/dashboard',[FrontendController::class,'index']);
+    Route::get('/dashboard',[FrontendController::class,'index'])->name('dashboard');
 
 //    Route::get('/dashboard','Admin\FrontendController@index');
    
 Route::get('/categories',[CategoryController::class,'index'])->name('category');
 //    Route::get('categories','Admin\CategoryController@index');
 
+// Category ---------- Category ----------------
 Route::get('/add-category',[CategoryController::class,'add'])->name('add-category');
 Route::post('/store',[CategoryController::class,'store'])->name('store.category');
 Route::get('/category/edit/{id}',[CategoryController::class,'edit'])->name('category.edit');
 Route::put('/category/update/{id}',[CategoryController::class,'update'])->name('update.category');
 Route::get('/category/delete/{id}',[CategoryController::class,'delete'])->name('category.delete');
+
+//product -----------------------product ---------------------
+
+Route::get('/product',[ProductController::class,'index'])->name('product');
+Route::get('/product-add',[ProductController::class,'add'])->name('product-add');
+
 });
