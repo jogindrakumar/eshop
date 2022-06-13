@@ -26,7 +26,7 @@
                 <th scope="row">{{ $product->id }}</th>
                 <td>{{ $product->name }}</td>
                 <td>{{ $product->description }}</td>
-                <td><img src="{{ asset('assets/upload/product/'.$product->image) }}" alt="" style="height: 100px; width:100px;"></td>
+                <td><img src="{{ asset($product->image) }}" alt="" style="height: 100px; width:100px;"></td>
                 <td>
                     <a href="{{ route('product.edit',$product->id) }}" class="btn btn-warning">Edit</a>
                     <a href="{{ route('product.delete',$product->id) }}" class="btn btn-danger">Delete</a>
