@@ -47,7 +47,7 @@ Route::get('/category/delete/{id}',[CategoryController::class,'delete'])->name('
 Route::get('/product',[ProductController::class,'index'])->name('product');
 Route::get('/product-add',[ProductController::class,'add'])->name('product-add');
 Route::post('/store',[ProductController::class,'store'])->name('product.store');
-Route::post('/edit/{id}',[ProductController::class,'edit'])->name('product.edit');
+Route::get('/edit/{id}',[ProductController::class,'edit'])->name('product.edit');
 Route::post('/delete/{id}',[ProductController::class,'delete'])->name('product.delete');
 
 });

@@ -50,4 +50,13 @@ class ProductController extends Controller
         return redirect()->route('product')->with('status','product Add successfully');
 
     }
+    
+
+    // edit 
+
+    public function edit($id){
+        $product = Product::find($id);
+        $category = Category::all();
+        return view('admin.product.edit',compact('product','category'));
+    }
 }
