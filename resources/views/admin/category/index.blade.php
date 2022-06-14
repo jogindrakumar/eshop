@@ -29,7 +29,9 @@
                 <td><img src="{{ asset('assets/upload/category/'.$category->image) }}" alt="" style="height: 100px; width:100px;"></td>
                 <td>
                     <a href="{{ route('category.edit',$category->id) }}" class="btn btn-warning">Edit</a>
-                    <a href="{{ route('category.delete',$category->id) }}" class="btn btn-danger">Delete</a>
+                    <a href="{{ route('category.delete',$category->id) }}"
+                      onclick="return confirm('Are you sure you want to delete this item?');"
+                      class="btn btn-danger">Delete</a>
                 </td>
               </tr>
               @endforeach

@@ -95,4 +95,15 @@ class ProductController extends Controller
 
         
     }
+
+
+    // delete function product
+
+    public function delete($id){
+        $image = Product::findorFail($id);
+        $old_image = $image->image;
+        unlink($old_image);
+        Product::find($id)->delete();
+        return redirect()->route('product')->with('status','product Delete successfully');
+    }
 }
