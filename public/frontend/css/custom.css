@@ -2,3 +2,11 @@
     width: 100%;
     max-height: 450px !important;
 }
+
+.view-category {
+    text-decoration: none;
+}
+
+.view-category :hover {
+    color: coral;
+}

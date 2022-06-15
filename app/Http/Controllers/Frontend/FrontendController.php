@@ -21,7 +21,24 @@ class FrontendController extends Controller
 
     public function category(){
 
-        $categories = Category::where('status','0')->get();
+        $categories = Category::where('status','1')->get();
         return view('frontend.category',compact('categories'));
+    }
+
+    // sperate category show in page 
+
+    public function viewCategory($slug){
+        if(Category::where('slug',$slug)->exists()){
+
+            $category = Category::where('slug',$slug)->first();
+            $products = Product::where('cat_id',$category->id)->where('status','1')->get();
+            return view('frontend.product.index',compact('category','products'));
+
+        }else
+        {
+            return redirect('/')->with('status','link broken');
+        }
+        
+
     }
 }

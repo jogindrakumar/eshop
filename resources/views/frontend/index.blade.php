@@ -18,6 +18,7 @@
                 
            
                 <div class="item">
+                    <a href="{{ route('view-category',$product->slug) }}" class="view-category">
                     <div class="card">
                         <img src="{{ asset($product->image) }}" alt="product image">
                         <div class="card-body">
@@ -27,6 +28,7 @@
                            
                         </div>
                     </div>
+                </a>
                 </div>
                 @endforeach
             </div>
@@ -67,7 +69,7 @@
     loop:true,
     margin:10,
     nav:true,
-    dots:false,
+    // dots:false,
     responsive:{
         0:{
             items:1
