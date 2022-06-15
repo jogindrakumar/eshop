@@ -18,7 +18,7 @@
                 
            
                 <div class="item">
-                    <a href="{{ route('view-category',$product->slug) }}" class="view-category">
+                    <a href="{{ url('category/'.$product->slug) }}" class="view-category">
                     <div class="card">
                         <img src="{{ asset($product->image) }}" alt="product image">
                         <div class="card-body">
