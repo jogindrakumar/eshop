@@ -34,6 +34,31 @@
         </div>
     </div>
 </div>
+<div class="py-5">
+    <div class="container">
+        <div class="row">
+            <h2 class="mb-3">Category Wise</h2>
+            <div class="owl-carousel trending-carousel owl-theme">
+                
+                @foreach ($popular_category as $category )
+                
+           
+                <div class="item">
+                    <div class="card">
+                        <img src="{{ asset('assets/upload/category/'.$category->image) }}" alt="category image">
+                        <div class="card-body">
+                            <h5>{{ $category->name }}</h5>
+                           <p>{{ $category->description }}</p>
+                           
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+           
+        </div>
+    </div>
+</div>
 @endsection
 @section('scripts')
 
