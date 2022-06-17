@@ -55,8 +55,8 @@
                     </div>
                     <div class="col-md-10">
                         <br>
-                        <button class="btn btn-success me-3 float-start" type="button">Add to Wishlist</button>
-                        <button class="btn btn-primary me-3 float-start" type="button">Add to Cart</button>
+                        <button class="btn btn-success me-3 float-start" type="button">Add to Wishlist <i class="fas fa-heart"></i></button>
+                        <button class="btn btn-primary me-3 float-start" type="button">Add to Cart <i class="fas fa-cart-plus"></i></button>
                     </div>
                 </div>
             </div>
