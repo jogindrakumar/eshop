@@ -15,7 +15,7 @@
 </div>
 
 <div class="container">
-    <div class="card shadow">
+    <div class="card shadow product_data">
         <div class="row">
             <div class="col-md-4 border-right">
                 <img src="{{ asset($products->image) }}" alt="" class="w-100">
@@ -47,6 +47,7 @@
                 <div class="row mt-2">
                     <div class="col-md-2">
                         <label for="Quantity">Quantity</label>
+                        <input type="hidden" value="{{ $products->id }}" class="prod_id">
                     <div class="input-group text-center mb-3" style="width: 130px;">
                         <button class="input-group-text decrement-btn">-</button>
                         <input type="text" name="quantity"  class="form-control qty-input text-center" value="1">
@@ -55,8 +56,8 @@
                     </div>
                     <div class="col-md-10">
                         <br>
+                        <button class="btn btn-primary me-3 float-start addToCartBtn" type="button">Add to Cart <i class="fas fa-cart-plus"></i></button>
                         <button class="btn btn-success me-3 float-start" type="button">Add to Wishlist <i class="fas fa-heart"></i></button>
-                        <button class="btn btn-primary me-3 float-start" type="button">Add to Cart <i class="fas fa-cart-plus"></i></button>
                     </div>
                 </div>
             </div>
@@ -72,6 +73,33 @@
 <script>
 
     $(document).ready(function() {
+
+        $('.addToCartBtn').click(function(e){
+            e.preventDefault();
+            var product_id = $(this).closest('.product_data').find('.prod_id').val();
+            var product_qty = $(this).closest('.product_data').find('.qty-input').val();
+            $.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+
+            $.ajax({
+                method: "POST",
+                url: "/add-to-cart",
+                data: {
+                    "product_id" : product_id,
+                    "product_qty" : product_qty,
+                },
+                success: function(response){
+                    alert(response.status);
+
+                }
+            });
+           
+        });
+
+
         $('.increment-btn').click(function(e){
             e.preventDefault();
 
