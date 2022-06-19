@@ -92,7 +92,7 @@
                     "product_qty" : product_qty,
                 },
                 success: function(response){
-                    alert(response.status);
+                    swal(response.status);
 
                 }
             });
