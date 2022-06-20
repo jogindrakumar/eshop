@@ -30,6 +30,7 @@ Auth::routes();
 Route::POST('/add-to-cart',[CartController::class,'addProduct']);
 Route::middleware(['auth'])->group(function(){
 
+    Route::get('cart',[CartController::class,'viewCart']);
    
 });
 
