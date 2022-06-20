@@ -27,13 +27,13 @@
                     <h6>{{ $item->products->name }}</h6>
                 </div>
                 <div class="col-md-3">
-                    <input type="hidden" class="prod_id">
                     <label for="Quantity">Quantity</label>
-                    <div class="input-group text-center mb-3" style="width: 130px;">
+                    <input type="hidden"  class="prod_id">
+                <div class="input-group text-center mb-3" style="width: 130px;">
                     <button class="input-group-text decrement-btn">-</button>
-                    <input type="text" name="quantity" class="form-control qty-input text-center" value="{{ $item->prod_qty }}">
+                    <input type="text" name="quantity"  class="form-control qty-input text-center" value="{{ $item->prod_qty }}">
                     <button class="input-group-text increment-btn">+</button>
-                    </div>
+                </div>
                 </div>
                 <div class="col-md-2">
                     <h3>Remove</h3>
