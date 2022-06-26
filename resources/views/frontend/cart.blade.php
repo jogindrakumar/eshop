@@ -13,13 +13,13 @@
     </div>
 </div>
 <div class="container my-5">
-    <div class="card shadow product_data">
+    <div class="card shadow">
         <div class="card-body">
 
             @foreach ($cartitems as $item)
                 
            
-            <div class="row">
+            <div class="row product_data">
                 <div class="col-md-2">
                     <img src="{{ asset($item->products->image) }}" alt="Image hre" style="height: 70px; width:70px;">
                 </div>
@@ -36,7 +36,7 @@
                 </div>
                 </div>
                 <div class="col-md-2">
-                    <h3>Remove</h3>
+                    <h6>Remove</h6>
                 </div>
             </div>
             <hr>
