@@ -28,7 +28,7 @@
                 </div>
                 <div class="col-md-3">
                     <label for="Quantity">Quantity</label>
-                    <input type="hidden"  class="prod_id">
+                    <input type="hidden"  class="prod_id" value="{{ $item->prod_id }}">
                 <div class="input-group text-center mb-3" style="width: 130px;">
                     <button class="input-group-text decrement-btn">-</button>
                     <input type="text" name="quantity"  class="form-control qty-input text-center" value="{{ $item->prod_qty }}">
@@ -36,7 +36,7 @@
                 </div>
                 </div>
                 <div class="col-md-2">
-                    <h6>Remove</h6>
+                    <button class="btn btn-danger delete-cart-item"><i class="fas fa-trash-alt"></i> Remove</button>
                 </div>
             </div>
             <hr>
