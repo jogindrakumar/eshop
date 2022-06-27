@@ -18,7 +18,7 @@
                 
            
                 <div class="item">
-                    <a href="{{ url('category/'.$product->slug) }}" class="view-category">
+                    <a href="{{ url('category/'.$product->category->slug.'/'.$product->slug) }}" class="view-category">
                     <div class="card">
                         <img src="{{ asset($product->image) }}" alt="product image">
                         <div class="card-body">
@@ -44,7 +44,7 @@
                 
                 @foreach ($popular_category as $category )
                 
-           
+                <a href="{{ url('category/'.$category->slug) }}" class="view-category">
                 <div class="item">
                     <div class="card">
                         <img src="{{ asset('assets/upload/category/'.$category->image) }}" alt="category image">
@@ -55,6 +55,7 @@
                         </div>
                     </div>
                 </div>
+            </a>
                 @endforeach
             </div>
            
