@@ -61,7 +61,9 @@ Checkout
             </div>
         </div>
         <div class="col-md-5">
+           
             <div class="card">
+                @if($cartitems->count() > 0)
                 <div class="card-body">
                     <h6>Order Details</h6>
                     <hr>
@@ -95,6 +97,14 @@ Checkout
               
                 </div>
             </div>
+            @else
+            <div class="card-body text-center">
+                <p class="float-start">Order Details</p>
+                <hr>
+                <h6>No Product in the Cart</h6>
+                
+            </div>
+            @endif
         </div>
     </div>
 </form>
